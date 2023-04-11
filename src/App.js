@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from 'react';
 
-function App() {
+const App = () => {
+
+    // 1. 뉴스 데이터를 담는 그릇 설정.
+    const [news, setNews] = useState([])
+
+    //2. 뉴스 정보를 가져오는 함수를 선언. async - await
+
+    const getNews = async () => {
+        try {
+
+        } catch (err) {
+            console.log(err)
+        }
+    }
+
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div>
+        <h1>Hello World!</h1>
+      </div>
   );
-}
+};
 
 export default App;
