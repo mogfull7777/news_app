@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import axios from "axios";
+import {Button, Card, Col, Container, Row} from "react-bootstrap";
 const App = () => {
 
     // 1. 뉴스 데이터를 담는 그릇 설정.
@@ -30,15 +31,23 @@ const App = () => {
     }, [])
 
   return (
-      <div>
-        <h1>{news.length}</h1>
-          {news && news.map(item => (
-              <div>
-                  <h1>{item.title}</h1>
-                  <h2>{item.author}</h2>
-              </div>
-          ))}
-      </div>
+      <Container>
+          <Row>
+              {news && news.map(item => (
+                  <Col className={'mt-3'}>
+                      <Card style={{ width: '18rem' }}>
+                          <Card.Img variant="top" src={item.urlToImage} />
+                          <Card.Body>
+                              <Card.Title>{item.title.slice(0, 15)}</Card.Title>
+                              <Card.Text>
+                                  {item.description.slice(0, 120)}
+                              </Card.Text>
+                          </Card.Body>
+                      </Card>
+                  </Col>
+              ))}
+          </Row>
+      </Container>
   );
 };
 
