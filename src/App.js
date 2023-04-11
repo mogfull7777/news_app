@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 
 const App = () => {
 
@@ -15,11 +15,15 @@ const App = () => {
         }
     }
 
+    // 3. useEffect 무조건 실행되는 함수.
 
+    useEffect(() => {
+        getNews()
+    }, [])
 
   return (
       <div>
-        <h1>Hello World!</h1>
+        <h1>{news.length}</h1>
       </div>
   );
 };
