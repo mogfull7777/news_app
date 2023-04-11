@@ -32,6 +32,12 @@ const App = () => {
   return (
       <div>
         <h1>{news.length}</h1>
+          {news && news.map(item => (
+              <div>
+                  <h1>{item.title}</h1>
+                  <h2>{item.author}</h2>
+              </div>
+          ))}
       </div>
   );
 };
